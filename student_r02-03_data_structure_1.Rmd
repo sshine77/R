@@ -30,16 +30,16 @@ knitr::opts_chunk$set(echo = TRUE)
 ```{r}
 
 # Vector of strings
-
+name <-  c("nana","guo","mumu","white")
 
 # Vector of numerical values
-
+money <- c(50,100,70)
 
 # Vector of logical values
-
+logical <- c(T,T,F,F,F)
 
 # vector內 不是同資料型態時
-
+temp <- c("nana",50)
 
 ```
 
@@ -49,16 +49,18 @@ knitr::opts_chunk$set(echo = TRUE)
 fruits <- c("banana", "apple", "orange")
 
 # 查看長度
-
+length(fruits)
 
 # 調用 指定位置元素
-
+fruits[2]
 
 # 調用 多個元素
-
+fruits[1:3]
+fruits[c(1,3)]
 
 # 排除 指定位置元素
-
+fruits[-2]
+fruits[-c(1,3)]
 
 ```
 
@@ -68,23 +70,26 @@ fruits <- c("banana", "apple", "orange")
 
 
 # 更改指定元素位置
-
+name[1]<-"na"
 
 # 新增元素 - 至最後位置
-
+name<-append(name,"7")
+name
 
 # 新增元素 - 至指定索引位置
-
+name<-append(x=name,values = "ugly",after=1)
+name
 
 ## 合併兩個 vector
-
+c(fruits,money)
 
 
 ```
 
 ### seq函數
 ```{r}
-
+num<-seq(from=1,to=50,by=1)
+num
 
 ```
 
@@ -93,19 +98,22 @@ fruits <- c("banana", "apple", "orange")
 ### 創建 factor
 ```{r}
 # Create a factor
+grade<-factor(c("100","90","90","50","70","50"))
+grade
 
 ```
 
 ### 查看與調用元素
 ```{r}
 # 查看 factor levels
-
+levels(grade)
+nlevels(grade)
 
 # 查看長度
-
+length(grade)
 
 # 查看元素
-
+grade[3]
 
 ```
 
@@ -114,7 +122,8 @@ fruits <- c("banana", "apple", "orange")
 factor_grades <- factor(c("A", "B", "A", "B", "C", "C", "C", "A"))
 
 # 將索引 1 改成C
-
+factor_grades[1]<-"C"
+factor_grades
 
 # 會 Warning 
 factor_grades[1] <- "D" # 因子層次不正確，產生 NA
