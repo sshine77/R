@@ -13,26 +13,20 @@ knitr::opts_chunk$set(echo = TRUE)
 
 主要資料結構
 
--   一維
-
-    -   向量 (vector)
-    -   因子向量 (factor)
-
--   二維
-
-    -   矩陣 (matrix)
-    -   資料框 (data.frame)
-    -   資料表 (data.table)
-
--   多維
-
-    -   陣列 (array)
-    -   清單 (list)
+- 一維
+  - 向量 (vector)
+  - 因子向量 (factor)
+- 二維
+  - 矩陣 (matrix)
+  - 資料框 (data.frame)
+  - 資料表 (data.table)
+- 多維
+  - 陣列 (array)
+  - 清單 (list)
 
 ## 2-3-2 vector
 
 ### 創建
-
 ```{r}
 
 # Vector of strings
@@ -90,15 +84,14 @@ fruits <- c("banana", "apple", "orange")
 # 更改指定元素位置
 fruits[1] 
 fruits[1] <- "bala"
-fruits 
+fruits
 
 # 新增元素 - 至最後位置
 fruits <- append(fruits, "cherry")
 fruits
 
 # 新增元素 - 至指定索引位置
-fruits <- append(values ="melon" , after = 2, x = fruits)
-#x是要修改的 values是要插入x的值 after是插入某索引值之後一個位置
+fruits <- append(values = fruits, after = 2, x = "melon")
 fruits
 
 ## 合併兩個 vector
@@ -111,12 +104,9 @@ c(v1, v2)
 ```
 
 ### seq函數
-
 ```{r}
 
-numbers <- seq(from = 0, to = 100, by = 20) 
-#for(int i=0;i<=100;i=i+20)
-#for i in range(0,101,20)
+numbers <- seq(from = 0, to = 100, by = 20)
 numbers
 
 ```
@@ -124,7 +114,6 @@ numbers
 ## 2-3-3 factor
 
 ### 創建 factor
-
 ```{r}
 # Create a factor
 factor_grades <- factor(c("A", "B", "A", "B", "C", "C", "C", "A"))
@@ -132,7 +121,6 @@ factor_grades
 ```
 
 ### 查看與調用元素
-
 ```{r}
 # 查看 factor levels
 levels(factor_grades)
@@ -147,7 +135,6 @@ factor_grades[7]
 ```
 
 ### 更動元素
-
 ```{r}
 factor_grades <- factor(c("A", "B", "A", "B", "C", "C", "C", "A"))
 
@@ -160,10 +147,10 @@ factor_grades[1] <- "D" # 因子層次不正確，產生 NA
 factor_grades
 ```
 
+
 ## 2-3-4 list
 
 ### 創建
-
 ```{r}
 list_1 <- list(
   c("black", "yellow", "orange"),
@@ -180,7 +167,6 @@ list_2 <- list(
 ```
 
 ### 查看與調用元素
-
 ```{r}
 list_1 <- list(
   c("black", "yellow", "orange"),
@@ -203,8 +189,7 @@ list_1[[1]][1]
 
 ```
 
-### 更動元素
-
+### 更動元素 
 ```{r}
 
 # 更動範例 1
@@ -214,7 +199,6 @@ thislist[1] <- "blackcurrant1"
 thislist[[1]] <- "blackcurrant2"
 thislist
 ```
-
 ```{r}
 # 更動範例 2
 list_1 <- list(
@@ -234,10 +218,10 @@ list_1
 
 ```
 
+
 ## 課堂練習
 
 ### 練習1
-
 ```{r}
 
 # Q1: 創建一向量 vec_1，其有 10至100 的整數
@@ -248,8 +232,8 @@ length(vec_1)
 
 ```
 
-### 練習2
 
+### 練習2
 ```{r}
 
 fruits <- c("banana", "apple", "orange", "mango", "lemon")
@@ -266,7 +250,6 @@ sort(fruits)
 ```
 
 ### 練習3
-
 ```{r}
 repeat_each <- rep(c(1,2,3), each = 3)
 
