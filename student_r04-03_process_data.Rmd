@@ -202,21 +202,27 @@ df_34
 ```{r}
 
 # 1 請讀取 /raw/winemag-data_first150k.csv 內的資料，存於變數 df。
+df<-read_csv("./raw/winemag-data_first150k.csv")
 
 
 # 2. 請問 country 欄位，在排除 NA 值後，共有幾個特殊值?
+t<-filter(df,!is.na(country))
+length(unique(t$country))
 
 
 # 3. 請挑選出 country 為 US, 且 price 在 100 以上的 rows。
-
+df_1<-df%>%filter((country)=="US" & price>100)  
+df_1
 
 # 4. 請創造一新欄位 NewPrice 為 Price*30。
+df%>%mutate(NewPrice3=price*30)
+df$NewPrice<-df$price*30
 
 
 # 5. 請創造一新欄位 IsFrance
 # - 當 country==France 的時候，該值為 T。
 # - 當 country!=France 的時候，該值為 F。
-
+df%>%mutate(IsFrance=ifelse((country)=="France",T,F))
 
 ```
 
