@@ -31,19 +31,22 @@ ggplot(
   data = iris_df,                         # 1 資料表
   aes(x=Sepal.Length, y=Sepal.Width)) +   # 2 座標軸對應之資料欄位
   geom_point(size=3, color="#69b3a2")     # 3 繪圖方式
+aes
 
 # 1.2.2 分佈圖
 ggplot(
   data = iris_df, 
   aes(x=Sepal.Length, y=Sepal.Width, color=Species)) +   
   geom_point()
+aes
 
 # 1.2.3a facet_grid
 ggplot(
   data = iris_df, 
   aes(x=Sepal.Length, y=Sepal.Width)) +   
   geom_point() + 
-  facet_grid(. ~ Species) # (切rows ~ 切columns)
+  facet_grid(Species ~ .) # (切rows ~ 切columns)
+aes
 
 # 1.2.3b facet_wrap
 ggplot(
@@ -51,6 +54,7 @@ ggplot(
   aes(x=Sepal.Length, y=Sepal.Width)) +   
   geom_point() + 
   facet_wrap(~Species) 
+aes
 
 # 可以繪圖, 但是意義是?
 # ggplot(iris_df, aes(x=Sepal.Length, y=Sepal.Width)) +
@@ -96,7 +100,7 @@ library(tidyverse) # 讀範例資料用
 ```{r}
 # 基本設定
 where <- list(lng=121.4501143, lat=25.1764033)
-where_popup <- 商管大樓
+where_popup <- '商管大樓'
 
 # 繪圖
 map <- leaflet() %>%

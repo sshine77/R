@@ -96,7 +96,7 @@ forums_invisible <- res %>%
 ```{r}
 
 # 0 API網址與取得之token
-token <- ""
+token <- "CWB-D05054DB-6A01-40AA-BD4C-42D97422E3DA"
 url <- paste0("https://opendata.cwb.gov.tw/api/v1/rest/datastore/O-A0003-001?Authorization=", token, "&elementName=TEMP")
 
 # 1 爬取
@@ -218,7 +218,7 @@ head(df %>% select(title, url))
 ```{r}
 
 # 0 API網址與取得之token
-token <- ""
+token <- "CWB-D05054DB-6A01-40AA-BD4C-42D97422E3DA"
 url <- paste0("https://opendata.cwb.gov.tw/api/v1/rest/datastore/O-A0003-001?Authorization=", token, "&elementName=TEMP")
 
 # 1 爬取
