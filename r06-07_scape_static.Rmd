@@ -121,6 +121,7 @@ webpage <- read_html(url)
 # 2 選出 目標列表中 單一文章 元素(elements)
 ele_posts <- webpage %>%
   html_elements(".r-ent")
+ele_posts
 
 # 3 蒐集 文章資訊
 posts_title <- c()
@@ -133,6 +134,7 @@ for (ele_p in ele_posts){
     html_element(".title") %>% 
     html_text2()
   posts_title <- append(posts_title , p_title)
+  p_title
 
   # 3.2 取出 單一文章連結
   p_link <- ele_p %>% 
